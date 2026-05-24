@@ -8,6 +8,13 @@ app = Flask(__name__)
 # Regular expression pattern for basic email syntax validation
 EMAIL_REGEX = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
 
+@app.route('/ping', methods=['GET'])
+def ping():
+    return "OK", 200
+
+@app.route('/api/v1/validate', methods=['GET'])
+def validate_email():
+
 # Blocklist of common disposable / burner email domains
 DISPOSABLE_DOMAINS = {
     "mailinator.com", 
