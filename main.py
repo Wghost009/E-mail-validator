@@ -2,7 +2,14 @@ from flask import Flask, jsonify, request
 
 from flask import Flask, jsonify, request
 import re
+import os  # Make sure this is at the top of your file with your other imports!
 
+if __name__ == '__main__':
+    # Pull the port from the cloud environment, or use 5000 as a local fallback
+    port = int(os.environ.get("PORT", 5000))
+    
+    # Run the app globally bound to 0.0.0.0 so the cloud gateway can reach it
+    app.run(host="0.0.0.0", port=port)
 app = Flask(__name__)
 
 # Regular expression pattern for basic email syntax validation
