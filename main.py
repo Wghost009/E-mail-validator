@@ -1,8 +1,7 @@
 from flask import Flask, jsonify, request
-
+import os
 from flask import Flask, jsonify, request
-import re
-import os  # Make sure this is at the top of your file with your other imports!
+import re # Make sure this is at the top of your file with your other imports!
 
 if __name__ == '__main__':
     # Pull the port from the cloud environment, or use 5000 as a local fallback
